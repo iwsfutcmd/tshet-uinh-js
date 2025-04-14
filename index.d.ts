@@ -4,6 +4,7 @@ declare module 'tshet-uinh/TshetUinh' {
   export * as 資料 from 'tshet-uinh/lib/資料';
   export * as 表達式 from 'tshet-uinh/lib/常用表達式';
   export * as 壓縮表示 from 'tshet-uinh/lib/壓縮表示';
+  export * as 音韻屬性常量 from 'tshet-uinh/lib/音韻屬性常量';
 
 }
 declare module 'tshet-uinh/data/raw/廣韻' {
