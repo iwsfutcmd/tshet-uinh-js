@@ -1,0 +1,28 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const ava_1 = __importDefault(require("ava"));
+const ____1 = require("./\u58D3\u7E2E\u8868\u793A");
+const __1 = require("./\u8CC7\u6599");
+const ____2 = require("./\u97F3\u97FB\u5730\u4F4D");
+(0, ava_1.default)('測試音韻編碼', t => {
+    t.is((0, ____1.encode音韻編碼)(____2.音韻地位.from描述('幫三C凡入')), 'A9P');
+    t.is((0, ____1.encode音韻編碼)(____2.音韻地位.from描述('羣開三A支平')), 'fFU');
+    t.is((0, ____1.decode音韻編碼)('A9P').描述, '幫三C凡入');
+    t.is((0, ____1.decode音韻編碼)('fFU').描述, '羣開三A支平');
+});
+(0, ava_1.default)('測試資料內全部音韻地位與編碼雙向轉換', t => {
+    for (const 當前音韻地位 of (0, __1.iter音韻地位)()) {
+        const encoded = (0, ____1.encode音韻編碼)(當前音韻地位);
+        const decoded = (0, ____1.decode音韻編碼)(encoded);
+        t.true(decoded.等於(當前音韻地位), `${當前音韻地位.描述} -> ${encoded} -> ${decoded.描述}`);
+    }
+});
+(0, ava_1.default)('測試不合法編碼', t => {
+    t.throws(() => (0, ____1.decode音韻編碼)('A'), { message: 'Invalid 編碼: "A"' });
+    t.throws(() => (0, ____1.decode音韻編碼)('@@@'), { message: 'Invalid character in 編碼: "@"' });
+    t.throws(() => (0, ____1.decode音韻編碼)('mAA'), { message: 'Invalid 母序號: 38' });
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoi5aOT57iu6KGo56S6LnNwZWMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi9zcmMvbGliL+Wjk+e4ruihqOekui5zcGVjLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7O0FBQUEsOENBQXVCO0FBRXZCLG9EQUFnRDtBQUNoRCxzQ0FBZ0M7QUFDaEMsb0RBQThCO0FBRTlCLElBQUEsYUFBSSxFQUFDLFFBQVEsRUFBRSxDQUFDLENBQUMsRUFBRTtJQUNqQixDQUFDLENBQUMsRUFBRSxDQUFDLElBQUEsZ0JBQVUsRUFBQyxVQUFJLENBQUMsTUFBTSxDQUFDLE9BQU8sQ0FBQyxDQUFDLEVBQUUsS0FBSyxDQUFDLENBQUM7SUFDOUMsQ0FBQyxDQUFDLEVBQUUsQ0FBQyxJQUFBLGdCQUFVLEVBQUMsVUFBSSxDQUFDLE1BQU0sQ0FBQyxRQUFRLENBQUMsQ0FBQyxFQUFFLEtBQUssQ0FBQyxDQUFDO0lBRS9DLENBQUMsQ0FBQyxFQUFFLENBQUMsSUFBQSxnQkFBVSxFQUFDLEtBQUssQ0FBQyxDQUFDLEVBQUUsRUFBRSxPQUFPLENBQUMsQ0FBQztJQUNwQyxDQUFDLENBQUMsRUFBRSxDQUFDLElBQUEsZ0JBQVUsRUFBQyxLQUFLLENBQUMsQ0FBQyxFQUFFLEVBQUUsUUFBUSxDQUFDLENBQUM7QUFDdkMsQ0FBQyxDQUFDLENBQUM7QUFFSCxJQUFBLGFBQUksRUFBQyxvQkFBb0IsRUFBRSxDQUFDLENBQUMsRUFBRTtJQUM3QixLQUFLLE1BQU0sTUFBTSxJQUFJLElBQUEsWUFBUSxHQUFFLEVBQUUsQ0FBQztRQUNoQyxNQUFNLE9BQU8sR0FBRyxJQUFBLGdCQUFVLEVBQUMsTUFBTSxDQUFDLENBQUM7UUFDbkMsTUFBTSxPQUFPLEdBQUcsSUFBQSxnQkFBVSxFQUFDLE9BQU8sQ0FBQyxDQUFDO1FBQ3BDLENBQUMsQ0FBQyxJQUFJLENBQUMsT0FBTyxDQUFDLEVBQUUsQ0FBQyxNQUFNLENBQUMsRUFBRSxHQUFHLE1BQU0sQ0FBQyxFQUFFLE9BQU8sT0FBTyxPQUFPLE9BQU8sQ0FBQyxFQUFFLEVBQUUsQ0FBQyxDQUFDO0lBQzVFLENBQUM7QUFDSCxDQUFDLENBQUMsQ0FBQztBQUVILElBQUEsYUFBSSxFQUFDLFNBQVMsRUFBRSxDQUFDLENBQUMsRUFBRTtJQUNsQixDQUFDLENBQUMsTUFBTSxDQUFDLEdBQUcsRUFBRSxDQUFDLElBQUEsZ0JBQVUsRUFBQyxHQUFHLENBQUMsRUFBRSxFQUFFLE9BQU8sRUFBRSxpQkFBaUIsRUFBRSxDQUFDLENBQUM7SUFDaEUsQ0FBQyxDQUFDLE1BQU0sQ0FBQyxHQUFHLEVBQUUsQ0FBQyxJQUFBLGdCQUFVLEVBQUMsS0FBSyxDQUFDLEVBQUUsRUFBRSxPQUFPLEVBQUUsOEJBQThCLEVBQUUsQ0FBQyxDQUFDO0lBQy9FLENBQUMsQ0FBQyxNQUFNLENBQUMsR0FBRyxFQUFFLENBQUMsSUFBQSxnQkFBVSxFQUFDLEtBQUssQ0FBQyxFQUFFLEVBQUUsT0FBTyxFQUFFLGlCQUFpQixFQUFFLENBQUMsQ0FBQztBQUNwRSxDQUFDLENBQUMsQ0FBQyJ9

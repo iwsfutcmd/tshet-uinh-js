@@ -1,20 +1,20 @@
 .idea/
 .nyc_output/
 .rollup.cache/
-/build/
+# /build/
 /node_modules/
 /test/
 /coverage/
 *.log
 yarn.lock
 
-/index.js
-/index.js.map
-/index.d.ts
+# /index.js
+# /index.js.map
+# /index.d.ts
 
-/docs
+# /docs
 
-/prepare/data.csv
-/prepare/v2.csv
+# /prepare/data.csv
+# /prepare/v2.csv
 
-/src/data/raw/
+# /src/data/raw/
