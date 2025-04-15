@@ -222,6 +222,20 @@ declare module 'tshet-uinh/lib/資料' {
       小韻號: string;
       韻目: string;
   }
+  export const m字頭檢索: Map<string, Readonly<{
+      字頭: string;
+      編碼: string;
+      反切: string | null;
+      釋義: string;
+      來源: 來源類型 | null;
+  }>[]>;
+  export const m音韻編碼檢索: Map<string, Readonly<{
+      字頭: string;
+      編碼: string;
+      反切: string | null;
+      釋義: string;
+      來源: 來源類型 | null;
+  }>[]>;
   /**
    * 遍歷內置資料中全部有字之音韻地位。
    * @returns 迭代器，所有至少對應一個字頭的音韻地位

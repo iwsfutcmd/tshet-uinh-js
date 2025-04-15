@@ -5491,6 +5491,8 @@ K8T丑法𦑣𦑣䎎飛上皃丑法切一
     var __ = /*#__PURE__*/Object.freeze({
         __proto__: null,
         iter音韻地位: iter音韻地位,
+        m字頭檢索: m字頭檢索,
+        m音韻編碼檢索: m音韻編碼檢索,
         query字頭: query字頭,
         query音韻地位: query音韻地位,
         廣韻: __$1
