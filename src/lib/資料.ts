@@ -25,8 +25,8 @@ export interface 王三來源 {
   韻目: string;
 }
 
-export const m字頭檢索 = new Map<string, 內部檢索結果[]>();
-export const m音韻編碼檢索 = new Map<string, 內部檢索結果[]>();
+const m字頭檢索 = new Map<string, 內部檢索結果[]>();
+const m音韻編碼檢索 = new Map<string, 內部檢索結果[]>();
 
 (function 廣韻索引() {
   for (const 原書小韻 of 廣韻impl.by原書小韻.values()) {
